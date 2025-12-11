@@ -1,0 +1,881 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;500;700&display=swap');
+
+:root {
+  --color-dark: #A05A48;
+  --color-light: #D8A48F;
+  --text-header: #D8A48F;
+  --bg-color: #ffffff;
+  --font-main: 'Bodoni Moda', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Personnalisation de la Scrollbar (Webkit: Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FDFBF7;
+  /* Couleur du fond de page */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-dark);
+  /* Terracotta */
+  border-radius: 5px;
+  border: 2px solid #FDFBF7;
+  /* Petit contour pour aérer */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #8a4a3a;
+  /* Un peu plus foncé au survol */
+}
+
+/* Scroll fluide sur toute la page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================================
+   PARTIE 1 : NOUVELLE HOME (DESIGN EDITORIAL)
+   ========================================= */
+
+.home-editorial {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #FDFBF7;
+  /* Beige chaud */
+  overflow: hidden;
+  /* Empêche le scroll horizontal */
+}
+
+/* --- COLONNE GAUCHE (LISTE) --- */
+.list-container {
+  width: 55%;
+  /* Prend un peu plus de la moitié */
+  padding: 4rem 2rem 4rem 4rem;
+  overflow-y: auto;
+  /* Permet de scroller la liste si l'écran est petit */
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.home-header {
+  margin-bottom: 4rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 2rem;
+}
+
+.tiny-tag {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: var(--color-dark);
+}
+
+.home-header h1 {
+  font-size: 4rem;
+  margin-top: 0.5rem;
+  color: #222;
+}
+
+/* La Liste des Lignes */
+.sessions-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.session-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Effet Hover sur la ligne */
+.session-row:hover {
+  padding-left: 20px;
+  /* Décalage léger vers la droite */
+  border-bottom: 1px solid var(--color-dark);
+}
+
+.session-row:hover .row-title {
+  color: var(--color-dark);
+  /* Le titre devient Terracotta */
+}
+
+.session-row:hover .row-number {
+  opacity: 1;
+  color: var(--color-dark);
+}
+
+/* Typographie de la ligne */
+.row-left {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+}
+
+.row-number {
+  font-size: 2rem;
+  font-weight: 700;
+  opacity: 0.3;
+  transition: color 0.3s;
+}
+
+.row-date {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  margin-top: 5px;
+  color: #666;
+}
+
+.row-center {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.row-title {
+  display: block;
+  font-size: 2rem;
+  font-family: var(--font-main);
+  transition: color 0.3s;
+}
+
+.row-subtitle {
+  display: block;
+  font-size: 1rem;
+  color: #888;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.row-right {
+  opacity: 0;
+  /* Caché par défaut */
+  transform: translateX(-10px);
+  transition: all 0.3s;
+  color: var(--color-dark);
+  font-size: 1.5rem;
+}
+
+.session-row:hover .row-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- COLONNE DROITE (PREVIEW) --- */
+.preview-container {
+  width: 45%;
+  height: 100vh;
+  position: relative;
+  background-color: var(--color-light);
+  /* Fond Beige plus foncé */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.preview-card {
+  width: 80%;
+  aspect-ratio: 3/4;
+  /* Format portrait élégant */
+  position: relative;
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  background-color: #ddd;
+  /* Placeholder gris */
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Animation d'apparition de l'image (Fade In) */
+.fade-in-img {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.preview-caption {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: monospace;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .home-editorial {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .list-container {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+  }
+
+  .preview-container {
+    display: none;
+  }
+
+  /* On cache la preview sur mobile pour simplifier */
+
+  .row-title {
+    font-size: 1.5rem;
+  }
+
+  .row-number {
+    font-size: 1.5rem;
+  }
+}
+
+/* =========================================
+   PARTIE 2 : PAGE DETAIL (Garde ton ancien CSS ici)
+   ========================================= */
+/* ... colle ton CSS de la page détail ici ... */
+/* === PAGE DETAIL (Version Long Texte) === */
+
+.fixed-close-btn {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid var(--color-dark);
+  color: var(--color-dark);
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.fixed-close-btn:hover {
+  background: var(--color-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.close-icon {
+  font-size: 1.5rem;
+  line-height: 0.5;
+}
+
+.creative-page {
+  background-color: #FDFBF7;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  display: block;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 4rem 4rem 4rem;
+  background-color: var(--color-light);
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 70%;
+}
+
+/* Plus large pour les longs titres */
+.hero-date {
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  line-height: 1;
+  margin: 1rem 0;
+  color: #000;
+}
+
+.hero-method {
+  font-style: italic;
+  font-size: 1.5rem;
+  color: #444;
+}
+
+.hero-number {
+  font-size: 25rem;
+  font-weight: 700;
+  color: white;
+  opacity: 0.4;
+  position: absolute;
+  right: -50px;
+  bottom: -100px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Learn Section */
+.learn-section {
+  padding: 5rem 2rem;
+}
+
+.learn-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.learn-image-container {
+  flex: 0.8;
+  position: relative;
+}
+
+/* Image un peu moins large */
+.learn-img {
+  width: 100%;
+  border-radius: 2px;
+  display: block;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--color-dark);
+  z-index: -1;
+}
+
+.learn-text {
+  flex: 1.2;
+}
+
+/* Plus de place pour le texte */
+.section-label {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  color: var(--color-dark);
+  margin-bottom: 1.5rem;
+  display: block;
+  font-weight: bold;
+}
+
+/* Texte ajusté pour être lisible s'il est long */
+.big-paragraph {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #333;
+  text-align: justify;
+}
+
+/* Feelings Section (NOUVEAU STYLE LISTE) */
+.feelings-section {
+  background-color: var(--color-dark);
+  color: var(--bg-color);
+  padding: 5rem 0;
+}
+
+.section-label.light {
+  color: var(--color-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+.feelings-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.feeling-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feeling-row:last-child {
+  border-bottom: none;
+}
+
+.feeling-title {
+  flex: 0 0 250px;
+}
+
+/* Largeur fixe pour le titre */
+.card-icon {
+  font-size: 2.5rem;
+  opacity: 0.5;
+  display: block;
+  color: var(--color-light);
+  margin-bottom: 0.5rem;
+}
+
+.feeling-title h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #fff;
+}
+
+.feeling-content {
+  flex: 1;
+}
+
+.feeling-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Analysis Section (NOUVEAU STYLE FLUIDE) */
+.analysis-section {
+  padding: 5rem 0;
+  background-color: #FDFBF7;
+}
+
+.fluid-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.fluid-box {
+  background: white;
+  padding: 2.5rem;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.fluid-box h4 {
+  margin-top: 0;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #999;
+  margin-bottom: 1rem;
+}
+
+.fluid-box p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+.main-box {
+  grid-column: span 2;
+  border-left: 5px solid var(--color-dark);
+}
+
+/* Prend toute la largeur */
+.highlight-box {
+  background-color: var(--color-light);
+  border-color: var(--color-light);
+}
+
+.highlight-text {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.2rem !important;
+  color: #222 !important;
+}
+
+/* Footer */
+.page-footer {
+  text-align: center;
+  padding: 4rem 0 6rem 0;
+}
+
+.big-back-link {
+  font-size: 2rem;
+  color: var(--color-dark);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border 0.3s;
+}
+
+.big-back-link:hover {
+  border-bottom: 1px solid var(--color-dark);
+}
+
+.navigation-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem 8rem 2rem;
+  /* Un peu d'air en bas */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family: var(--font-main);
+  color: #999;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link:hover {
+  color: var(--color-dark);
+}
+
+.nav-arrow {
+  font-size: 1.5rem;
+  position: relative;
+  top: -2px;
+}
+
+/* Sur mobile, on empile tout */
+@media (max-width: 768px) {
+  .navigation-footer {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  h1 {
+    font-size: 12vw;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-number {
+    font-size: 10rem;
+    bottom: -20px;
+    right: -20px;
+  }
+
+  .learn-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .feeling-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .feeling-title {
+    flex: auto;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .card-icon {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+
+  .feeling-title h3 {
+    font-size: 1.4rem;
+  }
+
+  .fluid-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-box {
+    grid-column: span 1;
+  }
+}
+
+/* =========================================
+   4. ANIMATIONS & DYNAMISME (AJOUT)
+   ========================================= */
+
+/* --- Barre de progression de lecture --- */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  background: var(--color-dark);
+  width: 100%;
+  transform-origin: 0%;
+  z-index: 2000;
+}
+
+/* --- Animation Cascade Entrée (Hero) --- */
+.anim-delay-1 {
+  opacity: 0;
+  animation: slideUpFade 0.8s ease forwards 0.1s;
+}
+
+.anim-delay-2 {
+  opacity: 0;
+  animation: slideUpFade 0.8s ease forwards 0.3s;
+}
+
+.anim-delay-3 {
+  opacity: 0;
+  animation: slideUpFade 0.8s ease forwards 0.5s;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Numéro Flottant --- */
+.floating-anim {
+  animation: floatBubble 6s ease-in-out infinite;
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* --- Effet Rideau sur l'Image (Reveal) --- */
+.learn-image-container {
+  overflow: hidden;
+  /* Important pour cacher le rideau quand il part */
+}
+
+.reveal-curtain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-dark);
+  /* Couleur du rideau */
+  z-index: 10;
+  animation: revealImage 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards 0.5s;
+  transform-origin: right;
+}
+
+.learn-img {
+  animation: scaleImage 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards 0.5s;
+  transform: scale(1.2);
+  /* Zoom de départ */
+}
+
+@keyframes revealImage {
+  0% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+
+  /* Le rideau disparait vers la droite */
+}
+
+@keyframes scaleImage {
+  0% {
+    transform: scale(1.2);
+    filter: grayscale(100%);
+  }
+
+  100% {
+    transform: scale(1);
+    filter: grayscale(0%);
+  }
+
+  /* L'image devient nette et couleur */
+}
+
+/* --- Animation Slide Up simple pour le texte --- */
+.anim-slide-up {
+  opacity: 0;
+  animation: slideUpFade 1s ease forwards 0.8s;
+}
+
+/* --- Interactions sur les Ressentis --- */
+.hover-scale {
+  transition: all 0.4s ease;
+  padding: 2rem;
+  /* On donne de l'espace pour l'effet */
+  border-radius: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* Bordure par défaut */
+}
+
+.hover-scale:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  /* Légère surbrillance */
+  transform: translateX(10px);
+  /* Décalage vers la droite */
+  border-left: 4px solid var(--color-light);
+  /* Indicateur visuel */
+  border-bottom-color: transparent;
+}
+
+.hover-scale:hover .card-icon {
+  color: #fff;
+  opacity: 1;
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+
+/* --- Animation Pop-In pour le Bento Grid --- */
+.pop-in {
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+  animation: popIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  /* On utilise une timeline view par défaut ou juste un délai */
+  animation-delay: 0.5s;
+}
+
+/* Pour simuler l'apparition au scroll sans JS complexe, 
+   on met un délai arbitraire assumant que l'utilisateur scrolle */
+.analysis-section .pop-in {
+  animation-delay: 0.2s;
+}
+
+.analysis-section .delay-100 {
+  animation-delay: 0.3s;
+}
+
+.analysis-section .delay-200 {
+  animation-delay: 0.4s;
+}
+
+.analysis-section .delay-300 {
+  animation-delay: 0.5s;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Effet Hover sur les boites Bento */
+.fluid-box {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.fluid-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--color-dark);
+  z-index: -1;
+  transition: width 0.4s ease;
+  opacity: 0.05;
+}
+
+.fluid-box:hover::after {
+  width: 100%;
+  /* Remplissage léger au survol */
+}
