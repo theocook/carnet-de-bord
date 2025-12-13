@@ -150,7 +150,7 @@ const SinglePage = () => {
             <div className="img-overlay"></div>
           </div>
           <div className="learn-text anim-slide-up">
-            <h2 className="section-label">Ce que j'ai appris</h2>
+            <h2 className="section-label">Ce que j'ai pratiqué</h2>
             <p className="big-paragraph">{data.learned.text}</p>
           </div>
         </div>
@@ -159,7 +159,7 @@ const SinglePage = () => {
       {/* SECTION RESSENTI */}
       <section className="feelings-section">
         <div className="container">
-          <h2 className="section-label light anim-slide-up">Mes ressentis</h2>
+          <h2 className="section-label light anim-slide-up">Ce que j'ai ressenti</h2>
           <div className="feelings-stack">
             <div className="feeling-row hover-scale">
               <div className="feeling-title">
@@ -184,7 +184,7 @@ const SinglePage = () => {
             <div className="feeling-row hover-scale delay-200">
               <div className="feeling-title">
                 <span className="card-icon">03</span>
-                <h3>Mental</h3>
+                <h3>Concentration / Mental</h3>
               </div>
               <div className="feeling-content">
                 <p>{data.feelings.mental}</p>
@@ -197,22 +197,22 @@ const SinglePage = () => {
       {/* SECTION BILAN */}
       <section className="analysis-section">
         <div className="container">
-          <h2 className="section-label">Bilan & Transfert</h2>
+          <h2 className="section-label">Ce que j'ai appris</h2>
           <div className="fluid-grid">
             <div className="fluid-box main-box pop-in">
-              <h4>L'essentiel</h4>
+              <h4>Quoi</h4>
               <p>{data.analysis.quoi}</p>
             </div>
             <div className="fluid-box highlight-box pop-in delay-100">
-              <h4>Satisfaction</h4>
+              <h4 style={{ color: 'white' }}>Satisfaction personnelle</h4>
               <p className="highlight-text">"{data.analysis.satisfaction}"</p>
             </div>
             <div className="fluid-box pop-in delay-200">
-              <h4>Progression</h4>
+              <h4>Progression envisagée</h4>
               <p>{data.analysis.progression}</p>
             </div>
             <div className="fluid-box pop-in delay-300">
-              <h4>Transfert Sport</h4>
+              <h4>Transfert</h4>
               <p>{data.analysis.utility}</p>
             </div>
           </div>
