@@ -5,7 +5,7 @@ export const sessionData = {
         date: "18 Septembre 2025",
         method: "Hatha Yoga",
         exercise: "Salutation au Soleil",
-        image: "/1.PNG", // Tu pourras mettre tes images locales ici (ex: "/mon-image.jpg")
+        image: "/1.png", // Tu pourras mettre tes images locales ici (ex: "/mon-image.jpg")
         learned: {
             text: "Enchaînement dynamique et cyclique de 12 postures (asanas) synchronisées avec le souffle. On alterne flexions avant et extensions arrière (montagne, pince debout, fente, planche, cobra, chien tête en bas)."
         },
@@ -27,7 +27,7 @@ export const sessionData = {
         date: "25 Septembre 2025",
         method: "Hatha Yoga",
         exercise: "L'Arbre (Vrksasana)",
-        image: "/2.PNG",
+        image: "/2.png",
         learned: {
             text: "Posture d'équilibre debout sur une jambe. Il s'agit de placer le pied de la jambe libre à l'intérieur de la cuisse (ou du mollet) de la jambe de terre, en ouvrant la hanche. Les mains sont jointes devant le cœur ou au-dessus de la tête. C'est un jeu de poids et de contre-poids."
         },
@@ -48,7 +48,7 @@ export const sessionData = {
         date: "2 Octobre 2025",
         method: "Hatha Yoga",
         exercise: "Le Cobra (Bhujangasana)",
-        image: "/3.PNG",
+        image: "/3.png",
         learned: {
             text: "Posture d'extension de la colonne vertébrale. Couché sur le ventre, mains sous les épaules, jambes largeur du bassin. J'inspire en soulevant le buste grâce aux muscles du dos, en gardant le bassin plaqué au sol et les coudes fléchis contre les flancs."
         },
@@ -90,7 +90,7 @@ export const sessionData = {
         date: "16 Octobre 2025",
         method: "Hatha Yoga",
         exercise: "La Planche sur le côté (Vasisthasana)",
-        image: "/5.PNG",
+        image: "/5.png",
         learned: {
             text: "Posture de gainage latéral en équilibre sur une seule main. Le corps doit former une ligne droite de la tête aux talons. Le bras de terre est tendu, l'autre est levé vers le ciel. L'exercice engage fortement les abdominaux (obliques) et les muscles des jambes."
         },
@@ -132,7 +132,7 @@ export const sessionData = {
         date: "30 Octobre 2025",
         method: "Pranayama (Technique respiratoire du Yoga)",
         exercise: "Uddiyana Bandha (L'envol / Le blocage abdominal)",
-        image: "/7.PNG",
+        image: "/7.png",
         learned: {
             text: "Exercice de fausse inspiration thoracique exécutée poumons vides. Debout, buste légèrement incliné, mains en appui sur les cuisses. Après une expiration totale (vider tout l'air), je rentre le ventre et le remonte vers le sternum sans reprendre d'air (aspiration viscérale). Je maintiens le blocage tant que c'est confortable avant de relâcher et inspirer."
         },
@@ -153,7 +153,7 @@ export const sessionData = {
         date: "20 Novembre 2025",
         method: "Hatha Yoga",
         exercise: "Jambe en extension sur le dos (Supta Padangusthasana)",
-        image: "/8.PNG",
+        image: "/8.png",
         learned: {
             text: "Posture d'étirement de la chaîne postérieure exécutée allongé sur le dos. Une jambe reste ancrée au sol, l'autre est levée vers le ciel à l'aide d'une sangle passée sous le pied. J'ai pratiqué l'extension verticale (pour les ischios) et l'ouverture sur le côté (pour les adducteurs), en veillant à garder les deux fesses au sol."
         },
@@ -174,7 +174,7 @@ export const sessionData = {
         date: "27 Novembre 2025",
         method: "Hatha Yoga",
         exercise: "Le Guerrier I (Virabhadrasana I)",
-        image: "/9.PNG",
+        image: "/9.png",
         learned: {
             text: "Posture debout vigoureuse. Jambes écartées (env. 1,20m), je pivote le torse et la jambe avant de 90 degrés. Je plie le genou avant à angle droit (le genou doit être au-dessus de la cheville) tout en gardant la jambe arrière tendue et le talon au sol. Les bras sont levés vers le ciel, parallèles entre eux"
         },
@@ -195,7 +195,7 @@ export const sessionData = {
         date: "4 Décembre 2025",
         method: "Hatha Yoga",
         exercise: "Étirement latéral intense (Parsvakonasana)",
-        image: "/10.PNG",
+        image: "/10.png",
         learned: {
             text: "Posture debout asymétrique. À partir d'une fente latérale (jambe avant pliée à 90°, cuisse parallèle au sol), je pose la main du même côté au sol, à l'extérieur du pied. L'autre bras est étiré dans le prolongement du corps, au-dessus de l'oreille, pour former une ligne droite diagonale continue du talon arrière jusqu'au bout des doigts."
         },
@@ -216,7 +216,7 @@ export const sessionData = {
         date: "11 Décembre 2025",
         method: "Hatha Yoga / Vinyasa",
         exercise: "Guerrier II : Variations flexion avant / arrière",
-        image: "/11.PNG",
+        image: "/11.png",
         learned: {
             text: "À partir de la posture de base du Guerrier II (fente large, bras à l'horizontale), j'ai pratiqué une alternance de mouvements du buste sans bouger les jambes :"
         },
