@@ -2,6 +2,7 @@ import React, { useState } from 'react'; // N'oublie pas d'importer useState
 import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
 import { sessionData } from './data';
 import ScrollToTop from './ScrollToTop';
+import ImageLoader from './ImageLoader';
 import './index.css';
 
 // --- NOUVEAU COMPOSANT HOME (Design Editorial) ---
@@ -143,11 +144,15 @@ const SinglePage = () => {
       <section className="learn-section">
         <div className="learn-grid">
           <div className="learn-image-container reveal-trigger">
-            {/* L'image */}
-            <img src={data.image} alt="Séance" className="learn-img" />
-            {/* Le masque qui crée l'effet rideau */}
-            <div className="reveal-curtain"></div>
-            <div className="img-overlay"></div>
+              {/* 1. On remplace l'image classique par le composant intelligent */}
+              <ImageLoader 
+                  src={data.image} 
+                  alt="Séance" 
+                  className="learn-img" 
+              />
+              {/* 2. On conserve tes éléments d'animation et de décoration */}
+              <div className="reveal-curtain"></div>
+              <div className="img-overlay"></div>
           </div>
           <div className="learn-text anim-slide-up">
             <h2 className="section-label">Ce que j'ai pratiqué</h2>
