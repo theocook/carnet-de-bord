@@ -155,7 +155,7 @@ export const sessionData = {
         exercise: "Jambe en extension sur le dos (Supta Padangusthasana)",
         image: "/8.webp",
         learned: {
-            text: "Posture d'étirement de la chaîne postérieure exécutée allongé sur le dos. Une jambe reste ancrée au sol, l'autre est levée vers le ciel à l'aide d'une sangle passée sous le pied. J'ai pratiqué l'extension verticale (pour les ischios) et l'ouverture sur le côté (pour les adducteurs), en veillant à garder les deux fesses au sol."
+            text: "Posture d'étirement de la chaîne postérieure exécutée allongé sur le dos. Une jambe reste ancrée au sol, l'autre est levée vers le ciel. J'ai pratiqué l'extension verticale (pour les ischios) et l'ouverture sur le côté (pour les adducteurs), en veillant à garder les deux fesses au sol."
         },
         feelings: {
             physique: "L'étirement dans les ischio-jambiers et le mollet était intense mais contrôlé. Lors de l'ouverture sur le côté, c'était un vrai défi de ne pas décoller la fesse opposée (crête iliaque) du sol.",
